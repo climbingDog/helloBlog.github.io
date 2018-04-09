@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>%2FhelloBlog.github.io%2F2018%2F04%2F09%2F%E4%BC%A0%E7%BB%9Fsingleton%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F%E0%B9%91%E4%B9%9B%E2%97%A1%E4%B9%9B%E0%B9%91%2F</url>
+    <title><![CDATA[传统singleton对象的正确打开方式๑乛◡乛๑]]></title>
+    <url>%2FhelloBlog.github.io%2F2018%2F04%2F01%2F%E4%BC%A0%E7%BB%9Fsingleton%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F%E0%B9%91%E4%B9%9B%E2%97%A1%E4%B9%9B%E0%B9%91%2F</url>
     <content type="text"><![CDATA[传统singleton对象的正确打开方式๑乛◡乛๑123456789101112131415161718192021/** * Description: provide for thirdpay-park-arena. * * @author William.He * @version 1.0 * @since 09/04/2018 12:00 PM */public class Singleton &#123; private Singleton() &#123;&#125; private static class PePeHolder&#123; private static Singleton singleton = new Singleton(); &#125; public static Singleton getInstance()&#123; return PePeHolder.singleton; &#125; public static void main(String[] args) &#123; System.out.println(Singleton.getInstance()); &#125;&#125;]]></content>
   </entry>
   <entry>
