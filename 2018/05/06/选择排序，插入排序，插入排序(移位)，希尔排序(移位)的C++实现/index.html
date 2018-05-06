@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://climbingdog.github.io/helloBlog.github.io">
-  <title>Archives | climbingDog的博客</title>
+  <title>选择排序，插入排序，插入排序(移位)，冒泡排序，希尔排序（移位）的C++实现 | climbingDog的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="climbingDog的博客">
-<meta property="og:url" content="https://climbingdog.github.io/helloBlog.github.io/archives/index.html">
+  <meta name="description" content="选择排序，插入排序，插入排序(移位)，冒泡排序，希尔排序（移位）的C++实现及性能测试选择排序： 1234567891011121314151617181920212223242526272829/* * SelectionSort.h * *  Created on: 2018年5月5日 *      Author: Will */#ifndef BASIC_SORT_INSERTION_SOR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="选择排序，插入排序，插入排序(移位)，冒泡排序，希尔排序（移位）的C++实现">
+<meta property="og:url" content="https://climbingdog.github.io/helloBlog.github.io/2018/05/06/选择排序，插入排序，插入排序(移位)，希尔排序(移位)的C++实现/index.html">
 <meta property="og:site_name" content="climbingDog的博客">
+<meta property="og:description" content="选择排序，插入排序，插入排序(移位)，冒泡排序，希尔排序（移位）的C++实现及性能测试选择排序： 1234567891011121314151617181920212223242526272829/* * SelectionSort.h * *  Created on: 2018年5月5日 *      Author: Will */#ifndef BASIC_SORT_INSERTION_SOR">
+<meta property="og:updated_time" content="2018-05-06T14:11:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="climbingDog的博客">
+<meta name="twitter:title" content="选择排序，插入排序，插入排序(移位)，冒泡排序，希尔排序（移位）的C++实现">
+<meta name="twitter:description" content="选择排序，插入排序，插入排序(移位)，冒泡排序，希尔排序（移位）的C++实现及性能测试选择排序： 1234567891011121314151617181920212223242526272829/* * SelectionSort.h * *  Created on: 2018年5月5日 *      Author: Will */#ifndef BASIC_SORT_INSERTION_SOR">
   
     <link rel="alternative" href="/atom.xml" title="climbingDog的博客" type="application/atom+xml">
   
@@ -131,157 +135,197 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-选择排序，插入排序，插入排序(移位)，希尔排序(移位)的C++实现" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      选择排序，插入排序，插入排序(移位)，冒泡排序，希尔排序（移位）的C++实现
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/helloBlog.github.io/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/helloBlog.github.io/2018/05/06/选择排序，插入排序，插入排序(移位)，希尔排序(移位)的C++实现/" class="archive-article-date">
+
+        
+        <a href="/helloBlog.github.io/2018/05/06/选择排序，插入排序，插入排序(移位)，希尔排序(移位)的C++实现/" class="archive-article-date">
   	<time datetime="2018-05-06T12:15:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-06</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/helloBlog.github.io/2018/05/06/选择排序，插入排序，插入排序(移位)，希尔排序(移位)的C++实现/">选择排序，插入排序，插入排序(移位)，冒泡排序，希尔排序（移位）的C++实现</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="选择排序，插入排序，插入排序-移位-，冒泡排序，希尔排序（移位）的C-实现及性能测试"><a href="#选择排序，插入排序，插入排序-移位-，冒泡排序，希尔排序（移位）的C-实现及性能测试" class="headerlink" title="选择排序，插入排序，插入排序(移位)，冒泡排序，希尔排序（移位）的C++实现及性能测试"></a>选择排序，插入排序，插入排序(移位)，冒泡排序，希尔排序（移位）的C++实现及性能测试</h4><p>选择排序：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * SelectionSort.h</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  Created on: 2018年5月5日</span></span><br><span class="line"><span class="comment"> *      Author: Will</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> BASIC_SORT_INSERTION_SORT_SELECTIONSORT_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BASIC_SORT_INSERTION_SORT_SELECTIONSORT_H_</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(T arr[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> minIndex = i;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; n; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span>(arr[j]&lt;arr[minIndex])&#123;</span><br><span class="line">				minIndex = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		swap(arr[i],arr[minIndex]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* BASIC_SORT_INSERTION_SORT_SELECTIONSORT_H_ */</span></span></span><br></pre></td></tr></table></figure>
+<p>插入排序</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment"> * InsertionSort.h</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  Created on: 2018年5月6日</span></span><br><span class="line"><span class="comment"> *      Author: Will</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> BASIC_SORT_INSERTION_SORT_INSERTIONSORT_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BASIC_SORT_INSERTION_SORT_INSERTIONSORT_H_</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(T arr[], <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line"><span class="comment">//		for(int j = i ; j&gt;0 ; --j)&#123;</span></span><br><span class="line"><span class="comment">//			if(arr[j]&lt;arr[j-1])&#123;</span></span><br><span class="line"><span class="comment">//				swap(arr[j-1],arr[j]);</span></span><br><span class="line"><span class="comment">//			&#125;else&#123;</span></span><br><span class="line"><span class="comment">//				break;</span></span><br><span class="line"><span class="comment">//			&#125;</span></span><br><span class="line"><span class="comment">//		&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 写法2</span></span><br><span class="line"><span class="comment">//        for( int j = i ; j &gt; 0 &amp;&amp; arr[j] &lt; arr[j-1] ; j -- )&#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//            swap( arr[j] , arr[j-1] );</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//		// 写法3</span></span><br><span class="line">		T temp = arr[i];</span><br><span class="line">		<span class="keyword">int</span> index;</span><br><span class="line"><span class="comment">//		       for(index = i ; index&gt;0 &amp;&amp; arr[index-1] &gt; temp;--index)&#123;</span></span><br><span class="line"><span class="comment">//		    	   arr[index] = arr[index-1];</span></span><br><span class="line"><span class="comment">//		       &#125;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//		       arr[index] = temp;</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (index = i; index &gt; <span class="number">0</span>; --index) &#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[index - <span class="number">1</span>] &gt; temp) &#123;</span><br><span class="line">				arr[index] = arr[index - <span class="number">1</span>];</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		arr[index] = temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* BASIC_SORT_INSERTION_SORT_INSERTIONSORT_H_ */</span></span></span><br></pre></td></tr></table></figure>
+<p>冒泡排序</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * BubbleSort.h</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  Created on: 2018年5月6日</span></span><br><span class="line"><span class="comment"> *      Author: Will</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> BASIC_SORT_INSERTION_SORT_BUBBLESORT_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BASIC_SORT_INSERTION_SORT_BUBBLESORT_H_</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(T arr[], <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; ++i) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n - i - <span class="number">1</span>; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">				swap(arr[j], arr[j + <span class="number">1</span>]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* BASIC_SORT_INSERTION_SORT_BUBBLESORT_H_ */</span></span></span><br></pre></td></tr></table></figure>
+<p>希尔排序-移位</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * ShellSort.h</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  Created on: 2018年5月6日</span></span><br><span class="line"><span class="comment"> *      Author: Will</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> BASIC_SORT_INSERTION_SORT_SHELLSORT_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BASIC_SORT_INSERTION_SORT_SHELLSORT_H_</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(T arr[], <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 计算 increment sequence: 1, 4, 13, 40, 121, 364, 1093...</span></span><br><span class="line">	<span class="comment">//取其序列的最大值，作为希尔排序的步进起始值</span></span><br><span class="line">    <span class="keyword">int</span> h = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>( h &lt; n/<span class="number">3</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        h = <span class="number">3</span> * h + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>( h &gt;= <span class="number">1</span> )&#123;</span><br><span class="line"></span><br><span class="line">    	<span class="built_in">cout</span>&lt;&lt;<span class="string">"希尔排序步进序列循环的值："</span>&lt;&lt;h&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="comment">// h-sort the array</span></span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> i = h ; i &lt; n ; i ++ )&#123;</span><br><span class="line"></span><br><span class="line">            T e = arr[i];</span><br><span class="line">            <span class="comment">// 对 arr[i], arr[i-h], arr[i-2*h], arr[i-3*h]... 使用插入排序</span></span><br><span class="line">            <span class="keyword">int</span> j;</span><br><span class="line">            <span class="keyword">for</span>( j = i ; j &gt;= h &amp;&amp; e &lt; arr[j-h] ; j =j- h )&#123;</span><br><span class="line">                arr[j] = arr[j-h];</span><br><span class="line">            &#125;</span><br><span class="line">            arr[j] = e;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        h = h/<span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* BASIC_SORT_INSERTION_SORT_SHELLSORT_H_ */</span></span></span><br></pre></td></tr></table></figure>
+<p>排序工具class.h</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * SortUtils.h</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  Created on: 2018年5月5日</span></span><br><span class="line"><span class="comment"> *      Author: Will</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> BASIC_SORT_INSERTION_SORT_SORTUTILS_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BASIC_SORT_INSERTION_SORT_SORTUTILS_H_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;random&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cassert&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> SortUtils&#123;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> *<span class="title">arrayGenerator</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//		assert(true);</span></span><br><span class="line"></span><br><span class="line">		random_device rd;</span><br><span class="line">		<span class="keyword">int</span> *arr = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">			arr[i] = rd()%(right-left+<span class="number">1</span>)+left;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> arr;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">int</span> *<span class="title">nearlyOrderArrayGenrator</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> swapTimes)</span></span>&#123;</span><br><span class="line">		random_device rd;</span><br><span class="line">		<span class="keyword">int</span> *arr = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">			arr[i] = i;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;swapTimes;++i)&#123;</span><br><span class="line">			<span class="keyword">int</span> posX = rd()%n;</span><br><span class="line">			<span class="keyword">int</span> posY = rd()%n;</span><br><span class="line"></span><br><span class="line">			swap(arr[posX],arr[posY]);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> arr;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 拷贝整型数组a中的所有元素到一个新的数组, 并返回新的数组</span></span><br><span class="line">	    <span class="function"><span class="keyword">int</span> *<span class="title">copyIntArray</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	        <span class="keyword">int</span> *arr = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">	        <span class="comment">//* 在VS中, copy函数被认为是不安全的, 请大家手动写一遍for循环:)</span></span><br><span class="line">	        copy(a, a+n, arr);</span><br><span class="line">	        <span class="keyword">return</span> arr;</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">printArray</span><span class="params">(T arr[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">    		<span class="built_in">cout</span>&lt;&lt;arr[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSort</span><span class="params">(T arr[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line"><span class="comment">//    	    	printArray(arr,n);</span></span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;++i)&#123;</span><br><span class="line">    		<span class="keyword">if</span>(arr[i]&gt;arr[i+<span class="number">1</span>])&#123;</span><br><span class="line">    			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line"></span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">    void testSort(string sortMethodName,void sortFunc(T[],int),T arr[],int n)&#123;</span><br><span class="line">    	<span class="keyword">clock_t</span> start = clock();</span><br><span class="line">    	sortFunc(arr,n);</span><br><span class="line">    	<span class="keyword">clock_t</span> end = clock();</span><br><span class="line"></span><br><span class="line">    	<span class="built_in">cout</span>&lt;&lt;sortMethodName&lt;&lt;<span class="string">"==&gt;"</span>&lt;&lt;<span class="keyword">double</span>(end-start)/CLOCKS_PER_SEC&lt;&lt;<span class="string">" second"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    	assert(isSort(arr,n));</span><br><span class="line"></span><br><span class="line">    	<span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* BASIC_SORT_INSERTION_SORT_SORTUTILS_H_ */</span></span></span><br></pre></td></tr></table></figure>
+<p>测试-主函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * InsertionSort.cpp</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  Created on: 2018��5��5��</span></span><br><span class="line"><span class="comment"> *      Author: Will</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SortUtils.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SelectionSort.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"BubbleSort.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"InsertionSort.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ShellSort.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">20000</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"随机数组长度为==》"</span> &lt;&lt; n &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">int</span> *arr1 = SortUtils::arrayGenerator(n, <span class="number">0</span>, n);</span><br><span class="line">	<span class="keyword">int</span> *arr2 = SortUtils::copyIntArray(arr1, n);</span><br><span class="line">	<span class="keyword">int</span> *arrBubble1 = SortUtils::copyIntArray(arr1, n);</span><br><span class="line">	<span class="keyword">int</span> *arrShell1 = SortUtils::copyIntArray(arr1, n);</span><br><span class="line"></span><br><span class="line"><span class="comment">//	SortUtils::printArray(arr1,n);</span></span><br><span class="line"><span class="comment">//	SortUtils::printArray(arr2,n);</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> *arr3 = SortUtils::arrayGenerator(n, <span class="number">0</span>, <span class="number">5</span>);</span><br><span class="line">	<span class="keyword">int</span> *arr4 = SortUtils::copyIntArray(arr3, n);</span><br><span class="line">	<span class="keyword">int</span> *arrBubble2 = SortUtils::copyIntArray(arr3, n);</span><br><span class="line">	<span class="keyword">int</span> *arrShell2 = SortUtils::copyIntArray(arr3, n);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> swapTimes = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">int</span> *arr5 = SortUtils::nearlyOrderArrayGenrator(n, swapTimes);</span><br><span class="line">	<span class="keyword">int</span> *arr6 = SortUtils::copyIntArray(arr5, n);</span><br><span class="line">	<span class="keyword">int</span> *arrBubble3 = SortUtils::copyIntArray(arr5, n);</span><br><span class="line">	<span class="keyword">int</span> *arrShell3 = SortUtils::copyIntArray(arr5, n);</span><br><span class="line"></span><br><span class="line">	SortUtils::testSort(<span class="string">"random-选择排序"</span>, selectionSort, arr1, n);</span><br><span class="line">	SortUtils::testSort(<span class="string">"random-插入排序"</span>, insertionSort, arr2, n);</span><br><span class="line">	SortUtils::testSort(<span class="string">"random-冒泡排序"</span>,bubbleSort,arrBubble1,n);</span><br><span class="line">	SortUtils::testSort(<span class="string">"random-Shell排序"</span>,shellSort,arrShell1,n);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	SortUtils::testSort(<span class="string">"more order 选择排序"</span>, selectionSort, arr3, n);</span><br><span class="line">	SortUtils::testSort(<span class="string">"more order 插入排序"</span>, insertionSort, arr4, n);</span><br><span class="line">	SortUtils::testSort(<span class="string">"more order 冒泡排序"</span>, bubbleSort, arrBubble2, n);</span><br><span class="line">	SortUtils::testSort(<span class="string">"more order Shell排序"</span>, shellSort, arrShell2, n);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	SortUtils::testSort(<span class="string">"nearly order 选择排序"</span>, selectionSort, arr5, n);</span><br><span class="line">	SortUtils::testSort(<span class="string">"nearly order 插入排序"</span>, insertionSort, arr6, n);</span><br><span class="line">	SortUtils::testSort(<span class="string">"nearly order 冒泡排序"</span>, bubbleSort, arrBubble3, n);</span><br><span class="line">	SortUtils::testSort(<span class="string">"nearly order Shell排序"</span>, shellSort, arrShell3, n);</span><br><span class="line"></span><br><span class="line"><span class="comment">//	SortUtils::printArray(arr1,n);</span></span><br><span class="line"><span class="comment">//	SortUtils::printArray(arr2,n);</span></span><br><span class="line">	<span class="keyword">delete</span>[] arr1;</span><br><span class="line">	<span class="keyword">delete</span>[] arr2;</span><br><span class="line">	<span class="keyword">delete</span>[] arr3;</span><br><span class="line">	<span class="keyword">delete</span>[] arr4;</span><br><span class="line">	<span class="keyword">delete</span>[] arr5;</span><br><span class="line">	<span class="keyword">delete</span>[] arr6;</span><br><span class="line">	<span class="keyword">delete</span>[] arrShell1;</span><br><span class="line">	<span class="keyword">delete</span>[] arrShell2;</span><br><span class="line">	<span class="keyword">delete</span>[] arrShell3;</span><br><span class="line">	<span class="keyword">delete</span>[] arrBubble1;</span><br><span class="line">	<span class="keyword">delete</span>[] arrBubble2;</span><br><span class="line">	<span class="keyword">delete</span>[] arrBubble3;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试结果</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">随机数组长度为==》<span class="number">20000</span></span><br><span class="line">random-选择排序==&gt;<span class="number">1.098</span> second</span><br><span class="line">random-插入排序==&gt;<span class="number">0.566</span> second</span><br><span class="line">random-冒泡排序==&gt;<span class="number">3.749</span> second</span><br><span class="line">希尔排序步进序列循环的值：<span class="number">9841</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">3280</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">1093</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">364</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">121</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">40</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">13</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">4</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">1</span></span><br><span class="line">random-Shell排序==&gt;<span class="number">0.005</span> second</span><br><span class="line"></span><br><span class="line">more order 选择排序==&gt;<span class="number">1.227</span> second</span><br><span class="line">more order 插入排序==&gt;<span class="number">0.514</span> second</span><br><span class="line">more order 冒泡排序==&gt;<span class="number">2.727</span> second</span><br><span class="line">希尔排序步进序列循环的值：<span class="number">9841</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">3280</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">1093</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">364</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">121</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">40</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">13</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">4</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">1</span></span><br><span class="line">more order Shell排序==&gt;<span class="number">0.002</span> second</span><br><span class="line"></span><br><span class="line">nearly order 选择排序==&gt;<span class="number">0.759</span> second</span><br><span class="line">nearly order 插入排序==&gt;<span class="number">0.006</span> second</span><br><span class="line">nearly order 冒泡排序==&gt;<span class="number">0.925</span> second</span><br><span class="line">希尔排序步进序列循环的值：<span class="number">9841</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">3280</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">1093</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">364</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">121</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">40</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">13</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">4</span></span><br><span class="line">希尔排序步进序列循环的值：<span class="number">1</span></span><br><span class="line">nearly order Shell排序==&gt;<span class="number">0.003</span> second</span><br></pre></td></tr></table></figure>
+<p>总结：</p>
+<p>选择排序：取得外循环的被选择的元素的下标，然后将该元素与右侧所有元素依次比较大小，如右侧元素小于取得下标的元素，则将下表赋值为较小元素的下标，直至到数列最后一个元素停止内层循环，</p>
+<p>特点：</p>
+<p>1.外循环被选中的元素的左侧的元素总是排好序的而且是最终所在的位置。</p>
+<p>2.换位操作在外循环中实现，比插入排序在内层循环中换位性能要好。</p>
+<p>3.对乱序，中度有序，接近有序的排序的耗时稳定在O($N^2$)级别</p>
+<p>插入排序：取得外层循环中的元素，将其与其左侧元素做比较，如果左侧元素较大，则将当前元素与左侧元素换位。</p>
+<p>特点：</p>
+<p>1.当前元素的左侧元素总是有序的，因此，如果当前元素比其左侧元素大时，可以直接终止内层循环。这使得插入排序对接近有序的数列的排序耗时接近O(N)，也就是说插入排序在特定的，有序性较强的数列排序时比选择排序耗时更短。</p>
+<p>2.换位操作发生在内层循环，换位耗时较长，因此衍生出改进型的插入排序：插入排序-移位</p>
+<p>插入排序-移位：选择在内存里保存一份外层循环(外循环下标从1开始，即从第二个元素开始)的需要插入的元素（记为C）的副本（记为T），然后将该元素的副本T逐次地与其左侧元素做比较，如果左侧元素较大，则将左侧元素（记为L）与L右侧的元素移位（即L的位置空出，L+1的位置赋值成L，因为C的值已被复制成副本T，所以C的位置可以被其左侧的元素的值覆盖），直至没有元素比T大时，将空置的位置下标的元素赋值成T。</p>
+<p>特点：</p>
+<p>1.内层循环中由换位操作（开辟新内存，三次赋值操作）改良为赋值操作（移位操作），外层每次循环也仅有一次赋值操作。与选择排序相比，既保留了对接近有序数列排列耗时的优势，又在对无序数列排序时获得较好的性能优势。</p>
+<p>2.仍然存在数列中的较小的值在数列右侧远端，需要逐次移位其左侧所有元素的操作。而希尔排序则为解决此类问题作出进一步的优化。</p>
+<p>希尔排序：采用特定的数列作为步进数列，将待排序数列（记为arr）按照步进数列的每次取得的值（记为n）做切分。必须注意到，数列总能将下标按照n的步进切分成n个数列。于是，可以将arr按照被切分的数列，按照每次步进n进行插入排序（可以选用插入排序-移位做进一步的优化）。对同一步进的所有数列做插入排序，意味着，在程序上，就是从步进n开始到arr最右侧元素终止，做步进是n的插入排序操作。</p>
+<p>特点：</p>
+<p>1.采用步进数列，解决了arr数列右侧远端是较小值的逐次比较的问题，改良为按照步进大小进行n位移的大跨步的调整。</p>
+<p>2.如果采用3n+1的步进数列，在arr数量级较小的情况下，相对归并，快速排序，代码实现起来较为简单，但能获得相近的性能。</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://img-1256327235.cos.ap-shanghai.myqcloud.com/FullSizeRender%204.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://img-1256327235.cos.ap-shanghai.myqcloud.com/FullSizeRender%203.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://climbingdog.github.io/helloBlog.github.io/2018/05/06/选择排序，插入排序，插入排序(移位)，希尔排序(移位)的C++实现/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/helloBlog.github.io/2018/04/25/与SSO对接，OA系统跨域免登录的一个设计思路与demo/" class="archive-article-date">
-  	<time datetime="2018-04-25T09:53:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-25</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/helloBlog.github.io/2018/04/25/与SSO对接，OA系统跨域免登录的一个设计思路与demo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">与SSO对接，OA系统跨域免登录的一个设计思路与demo</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/helloBlog.github.io/2018/04/25/与SSO对接，OA系统跨域免登录的一个设计思路与demo/">与SSO对接，OA系统跨域免登录的一个设计思路与demo</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/helloBlog.github.io/2018/04/19/Mybatis注入多数据源并动态切换的一种方法/" class="archive-article-date">
-  	<time datetime="2018-04-19T02:16:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/helloBlog.github.io/2018/04/19/Mybatis注入多数据源并动态切换的一种方法/">Mybatis注入多数据源并动态切换的一种方法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/helloBlog.github.io/2018/04/01/传统singleton对象的正确打开方式๑乛◡乛๑/" class="archive-article-date">
-  	<time datetime="2018-04-01T06:42:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/helloBlog.github.io/2018/04/01/传统singleton对象的正确打开方式๑乛◡乛๑/">传统singleton对象的正确打开方式๑乛◡乛๑</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/helloBlog.github.io/2018/03/27/hello-hexo/" class="archive-article-date">
-  	<time datetime="2018-03-27T06:42:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/helloBlog.github.io/2018/03/27/hello-hexo/">hello blog</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -304,8 +348,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
