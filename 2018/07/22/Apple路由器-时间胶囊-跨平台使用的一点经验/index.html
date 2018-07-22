@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://climbingdog.github.io/helloBlog.github.io">
-  <title>前后端Token通信的一点思路 | climbingDog的博客</title>
+  <title>Apple路由器-时间胶囊-跨平台使用的一点经验 | climbingDog的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前后端Token通信的一点思路。 tip1:token后端应作合适的生命周期管理，并可以考虑和用户的身份标识绑定 tip2:token下发时，应当加入加密规则，预防下发参数被盗用后申请token。">
+  <meta name="description" content="Apple路由器-时间胶囊-跨平台使用的一点经验目的：因个人需求，需要一个跨平台，稳定，高速，高容量的内网共享环境。 物料：Airport Time Capsule 、windows pc、macbook、AppleTV、ipad，1TB硬盘等  一般设置：按照手册设定路由器各项参数，将内置硬盘设定为mac生产工具的时光备份硬盘，网路上都有相关攻略。 特殊设置：也是难点，几乎未找到攻略。这里罗列几">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前后端Token通信的一点思路">
-<meta property="og:url" content="https://climbingdog.github.io/helloBlog.github.io/2018/06/15/前后端Token通信的一点思路/index.html">
+<meta property="og:title" content="Apple路由器-时间胶囊-跨平台使用的一点经验">
+<meta property="og:url" content="https://climbingdog.github.io/helloBlog.github.io/2018/07/22/Apple路由器-时间胶囊-跨平台使用的一点经验/index.html">
 <meta property="og:site_name" content="climbingDog的博客">
-<meta property="og:description" content="前后端Token通信的一点思路。 tip1:token后端应作合适的生命周期管理，并可以考虑和用户的身份标识绑定 tip2:token下发时，应当加入加密规则，预防下发参数被盗用后申请token。">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fsbytgfehaj312y12ywko.jpg">
-<meta property="og:updated_time" content="2018-06-15T09:02:16.000Z">
+<meta property="og:description" content="Apple路由器-时间胶囊-跨平台使用的一点经验目的：因个人需求，需要一个跨平台，稳定，高速，高容量的内网共享环境。 物料：Airport Time Capsule 、windows pc、macbook、AppleTV、ipad，1TB硬盘等  一般设置：按照手册设定路由器各项参数，将内置硬盘设定为mac生产工具的时光备份硬盘，网路上都有相关攻略。 特殊设置：也是难点，几乎未找到攻略。这里罗列几">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1ftip9jqvlaj309606bjr8.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1ftip9mphcmj303w02djr5.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1ftip9ghe4hj30f706eglj.jpg">
+<meta property="og:updated_time" content="2018-07-22T08:06:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前后端Token通信的一点思路">
-<meta name="twitter:description" content="前后端Token通信的一点思路。 tip1:token后端应作合适的生命周期管理，并可以考虑和用户的身份标识绑定 tip2:token下发时，应当加入加密规则，预防下发参数被盗用后申请token。">
-<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fsbytgfehaj312y12ywko.jpg">
+<meta name="twitter:title" content="Apple路由器-时间胶囊-跨平台使用的一点经验">
+<meta name="twitter:description" content="Apple路由器-时间胶囊-跨平台使用的一点经验目的：因个人需求，需要一个跨平台，稳定，高速，高容量的内网共享环境。 物料：Airport Time Capsule 、windows pc、macbook、AppleTV、ipad，1TB硬盘等  一般设置：按照手册设定路由器各项参数，将内置硬盘设定为mac生产工具的时光备份硬盘，网路上都有相关攻略。 特殊设置：也是难点，几乎未找到攻略。这里罗列几">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1ftip9jqvlaj309606bjr8.jpg">
   
     <link rel="alternative" href="/atom.xml" title="climbingDog的博客" type="application/atom+xml">
   
@@ -137,29 +139,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-前后端Token通信的一点思路" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Apple路由器-时间胶囊-跨平台使用的一点经验" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      前后端Token通信的一点思路
+      Apple路由器-时间胶囊-跨平台使用的一点经验
     </h1>
   
 
         
-        <a href="/helloBlog.github.io/2018/06/15/前后端Token通信的一点思路/" class="archive-article-date">
-  	<time datetime="2018-06-15T09:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-15</time>
+        <a href="/helloBlog.github.io/2018/07/22/Apple路由器-时间胶囊-跨平台使用的一点经验/" class="archive-article-date">
+  	<time datetime="2018-07-22T07:24:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="前后端Token通信的一点思路。"><a href="#前后端Token通信的一点思路。" class="headerlink" title="前后端Token通信的一点思路。"></a>前后端Token通信的一点思路。</h4><p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fsbytgfehaj312y12ywko.jpg" alt=""></p>
-<p>tip1:token后端应作合适的生命周期管理，并可以考虑和用户的身份标识绑定</p>
-<p>tip2:token下发时，应当加入加密规则，预防下发参数被盗用后申请token。</p>
+        <h4 id="Apple路由器-时间胶囊-跨平台使用的一点经验"><a href="#Apple路由器-时间胶囊-跨平台使用的一点经验" class="headerlink" title="Apple路由器-时间胶囊-跨平台使用的一点经验"></a>Apple路由器-时间胶囊-跨平台使用的一点经验</h4><p>目的：因个人需求，需要一个跨平台，稳定，高速，高容量的内网共享环境。</p>
+<p>物料：Airport Time Capsule 、windows pc、macbook、AppleTV、ipad，1TB硬盘等</p>
+<p> 一般设置：按照手册设定路由器各项参数，将内置硬盘设定为mac生产工具的时光备份硬盘，网路上都有相关攻略。</p>
+<p>特殊设置：也是难点，几乎未找到攻略。这里罗列几点，希望能给需要的人一点参考</p>
+<p>tip1:目前为止，时光胶囊外接硬盘只识别fat32和nfs两种文件系统格式。所以外接硬盘格式化时需要注意。</p>
+<p>tip2:不建议外接硬盘做分区。以免发生只识别一个区，另一个区被忽略的情况。</p>
+<p>tip3:因为fat32不支持4g以上文件，所以建议用nfs格式的文件系统，因为windows不识别nfs文件系统，所以需要再做设置</p>
+<p>tip4:为了访问nfs硬盘，因为win10系统支持nfs挂载，需要在程序服务里把对应的服务开启（网路上有攻略）</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1ftip9jqvlaj309606bjr8.jpg" alt=""></p>
+<p>tip5:win10需要安装最高版本的windows下的airport代理工具，apple官网有下载。win7版的亲测能用</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1ftip9mphcmj303w02djr5.jpg" alt=""></p>
+<p>tip6:安装完成后需要重启，右下角出现airport代理工具图标，说明安装成功。</p>
+<p>tip7:windows下的文件可以直接粘贴复制到时间胶囊的外接硬盘中，无需自己做格式转换。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1ftip9ghe4hj30f706eglj.jpg" alt=""></p>
+<p>时间胶囊的5G信号非常稳定，apple全家桶互相访问无线速率100M/S也是正常。windows速率则大概10m／s不到，可能与我pc的年份比较久远有关。</p>
 
       
 
@@ -249,7 +263,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://climbingdog.github.io/helloBlog.github.io/2018/06/15/前后端Token通信的一点思路/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://climbingdog.github.io/helloBlog.github.io/2018/07/22/Apple路由器-时间胶囊-跨平台使用的一点经验/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -263,18 +277,9 @@
   
 <nav id="article-nav">
   
-    <a href="/helloBlog.github.io/2018/07/22/Apple路由器-时间胶囊-跨平台使用的一点经验/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Apple路由器-时间胶囊-跨平台使用的一点经验
-        
-      </div>
-    </a>
   
-  
-    <a href="/helloBlog.github.io/2018/05/06/选择排序，插入排序，插入排序(移位)，希尔排序(移位)的C++实现/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">选择排序，插入排序，插入排序(移位)，冒泡排序，希尔排序（移位）的C++实现</div>
+    <a href="/helloBlog.github.io/2018/06/15/前后端Token通信的一点思路/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前后端Token通信的一点思路</div>
       <i class="icon-circle-right"></i>
     </a>
   

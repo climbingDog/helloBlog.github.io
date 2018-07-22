@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Apple路由器-时间胶囊-跨平台使用的一点经验]]></title>
+    <url>%2FhelloBlog.github.io%2F2018%2F07%2F22%2FApple%E8%B7%AF%E7%94%B1%E5%99%A8-%E6%97%B6%E9%97%B4%E8%83%B6%E5%9B%8A-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E7%82%B9%E7%BB%8F%E9%AA%8C%2F</url>
+    <content type="text"><![CDATA[Apple路由器-时间胶囊-跨平台使用的一点经验目的：因个人需求，需要一个跨平台，稳定，高速，高容量的内网共享环境。 物料：Airport Time Capsule 、windows pc、macbook、AppleTV、ipad，1TB硬盘等 一般设置：按照手册设定路由器各项参数，将内置硬盘设定为mac生产工具的时光备份硬盘，网路上都有相关攻略。 特殊设置：也是难点，几乎未找到攻略。这里罗列几点，希望能给需要的人一点参考 tip1:目前为止，时光胶囊外接硬盘只识别fat32和nfs两种文件系统格式。所以外接硬盘格式化时需要注意。 tip2:不建议外接硬盘做分区。以免发生只识别一个区，另一个区被忽略的情况。 tip3:因为fat32不支持4g以上文件，所以建议用nfs格式的文件系统，因为windows不识别nfs文件系统，所以需要再做设置 tip4:为了访问nfs硬盘，因为win10系统支持nfs挂载，需要在程序服务里把对应的服务开启（网路上有攻略） tip5:win10需要安装最高版本的windows下的airport代理工具，apple官网有下载。win7版的亲测能用 tip6:安装完成后需要重启，右下角出现airport代理工具图标，说明安装成功。 tip7:windows下的文件可以直接粘贴复制到时间胶囊的外接硬盘中，无需自己做格式转换。 时间胶囊的5G信号非常稳定，apple全家桶互相访问无线速率100M/S也是正常。windows速率则大概10m／s不到，可能与我pc的年份比较久远有关。]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[前后端Token通信的一点思路]]></title>
     <url>%2FhelloBlog.github.io%2F2018%2F06%2F15%2F%E5%89%8D%E5%90%8E%E7%AB%AFToken%E9%80%9A%E4%BF%A1%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%B7%AF%2F</url>
     <content type="text"><![CDATA[前后端Token通信的一点思路。 tip1:token后端应作合适的生命周期管理，并可以考虑和用户的身份标识绑定 tip2:token下发时，应当加入加密规则，预防下发参数被盗用后申请token。]]></content>
