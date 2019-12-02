@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://climbingdog.github.io/helloBlog.github.io">
-  <title>Archives: 2018 | climbingDog的博客</title>
+  <title>git远程服务搭建与简单使用 | climbingDog的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="climbingDog的博客">
-<meta property="og:url" content="https://climbingdog.github.io/helloBlog.github.io/archives/2018/index.html">
+  <meta name="description" content="git远程服务搭建与简单实用@Author Will.He@email will-he@hotamil.com #git server centos7 install document step 0: #在远端服务器安装git服务（CentOS7@ALIYUM）yum install -y gitgit –version    (this cmd can verify your git insta">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git远程服务搭建与简单使用">
+<meta property="og:url" content="https://climbingdog.github.io/helloBlog.github.io/2019/12/02/git服务搭建和简单的使用/index.html">
 <meta property="og:site_name" content="climbingDog的博客">
+<meta property="og:description" content="git远程服务搭建与简单实用@Author Will.He@email will-he@hotamil.com #git server centos7 install document step 0: #在远端服务器安装git服务（CentOS7@ALIYUM）yum install -y gitgit –version    (this cmd can verify your git insta">
+<meta property="og:updated_time" content="2019-12-02T06:21:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="climbingDog的博客">
+<meta name="twitter:title" content="git远程服务搭建与简单使用">
+<meta name="twitter:description" content="git远程服务搭建与简单实用@Author Will.He@email will-he@hotamil.com #git server centos7 install document step 0: #在远端服务器安装git服务（CentOS7@ALIYUM）yum install -y gitgit –version    (this cmd can verify your git insta">
   
     <link rel="alternative" href="/atom.xml" title="climbingDog的博客" type="application/atom+xml">
   
@@ -131,211 +136,237 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-git服务搭建和简单的使用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git远程服务搭建与简单使用
+    </h1>
+  
+
+        
+        <a href="/helloBlog.github.io/2019/12/02/git服务搭建和简单的使用/" class="archive-article-date">
+  	<time datetime="2019-12-02T01:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="git远程服务搭建与简单实用"><a href="#git远程服务搭建与简单实用" class="headerlink" title="git远程服务搭建与简单实用"></a>git远程服务搭建与简单实用</h4><p>@Author Will.He<br>@email <a href="mailto:will-he@hotamil.com" target="_blank" rel="noopener">will-he@hotamil.com</a></p>
+<p>#git server centos7 install document</p>
+<p>step 0:</p>
+<p>#在远端服务器安装git服务（CentOS7@ALIYUM）<br>yum install -y git<br>git –version    (this cmd can verify your git install is successfully)</p>
+<p>step1:</p>
+<p>#生成本地的公钥私钥文件<br>sh-keygen -t rsa -C ‘your email address for loginname’</p>
+<p>#for example:<br>ssh-keygen -t rsa -C <a href="mailto:&#39;yourEmail@qq.com" target="_blank" rel="noopener">&#39;yourEmail@qq.com</a>‘</p>
+<p>tip1: When you run the cmd above, I mean before the local pc or mac really generate your key pairs, the computer will ask you for a file name for the key file. I strongly recomend you to type your email string before @ as the file name,somehow you can easily recognize the key by its name and why it is made;</p>
+<p>tip2:When your local computer ask you for the passphrase ,you may directly tpye enter.(it means no passphrase)</p>
+<p>tip3:If your computer generate the key pairs,you can find the files in the directory which is your current specific path.</p>
+<p>step2:</p>
+<p>#这是服务器上的操作，不是本地电脑操作</p>
+<p>#创建git用户,if you think other name is better ,it is your call;<br>adduser git  </p>
+<p>#创建密码<br>password git </p>
+<p>#创建.ssh文件夹<br>su git<br>cd ~<br>mkdir .ssh</p>
+<p>#修改sshd配置文件，让服务器支持公钥登陆<br>vi /etc/ssh/sshd_config</p>
+<p>#取消下面两个配置的注释<br>PubkeyAuthentication yes<br>AuthorizedKeysFile .ssh/authorized_keys</p>
+<p>#重启sshd服务<br>systemctl restart sshd.service</p>
+<p>step3</p>
+<p>#将本地公钥导入到服务器，本地操作<br>ssh git@your server ip ‘cat &gt;&gt; .ssh/authorized_keys’ &lt; ~/.ssh/785476800.pub</p>
+<p>tip: you may be asked for a password to access the remote server. this password is the one which you make for user git in step2;</p>
+<p>step4</p>
+<p>#解决可能的文件权限问题,服务器上操作<br>su root<br>chmod 700 /home/git/.ssh<br>chmod 600 /home/git/.ssh/authorized_keys</p>
+<p>step 5:<br>It is done;<br>you can use the git cmd to operate your file ,and enjoy your git journey</p>
+<p>if you don’t want user git login from ssh client for safety, and please at ease,it is no bussiness to git login<br>you may vi /etc/passed ,and find the git:x:10001:10001::/home/git:/bin/bash,and change the bash to git-shell and :wq</p>
+<p>at last:<br>the cmd in common use</p>
+<p>====================================在remote建立git仓库并拉取到本地==========================================</p>
+<p>#how to generate a git repository in the remote Server<br>cd to your git directory ,/home/git/remote e.g.<br>if there is noting,make one;</p>
+<p>#name a directory which your project want to name<br>/home/git/remote/hello-git e.g.</p>
+<p>#then use the cmd below to init the git repository<br>mkdir hello-git.git  (recomend you to name this directory similary like your project name)</p>
+<p>#创建裸体仓库，只能查看版本<br>git init –bare hello-git.git</p>
+<p>#解决可能的权限问题<br>chown -R git:git hello-git.git</p>
+<p>#克隆远端仓库文件到本地<br>git clone git@ip:your git project directory path (which contain a xx.git file)<br>git clone <a href="mailto:git@ip.ip.ip.ip" target="_blank" rel="noopener">git@ip.ip.ip.ip</a>:/home/git/remote/r2/r2.git e.g.</p>
+<p>#查看本地git管理文件的状态<br>git status </p>
+<h1 id="将文件提交到到unstage"><a href="#将文件提交到到unstage" class="headerlink" title="将文件提交到到unstage"></a>将文件提交到到unstage</h1><p>git add <file></file></p>
+<p>#将文件提交到stage<br>git commit -m “提交的说明文字” <file><br>file 写成 .  是目录下的管理文件全部提交</file></p>
+<p>#将文件推送到远端服务器<br>git push -u origin master<br>origin:当前远程服务器 使用 git remote 可以获得<br>master:当前主分支</p>
+<p>#从远程仓库拉取文件(这个建立在已经和远端git仓库建立关联的前提下)<br>git pull origin master</p>
+<p>=========================================在本地老项目中提交到remote服务器=================================================<br>cd your local project directory<br>git init</p>
+<p>git add .</p>
+<p>git commit -m “your local project xxxx init “</p>
+<p>#warning : please make sure your remote repository is clean !<br>git remote add origin <a href="mailto:git@ip.ip.ip.ip" target="_blank" rel="noopener">git@ip.ip.ip.ip</a>:/home/git/remote/r2/r2.git e.g.</p>
+<h1 id="verify-the-result-of-the-cmd-above"><a href="#verify-the-result-of-the-cmd-above" class="headerlink" title="verify the result of the cmd above"></a>verify the result of the cmd above</h1><p>git remote -v </p>
+<p>#提交本地文件到远端仓库<br>git push origin master</p>
+<p>Done!</p>
+<p>================================config the git’s .gitignore   file===========================================<br>I save the .gitignore file to the onedrive/git_global_config</p>
+<p>git config –global core.excludesfile ~/Document/oneDrive/git_global_config/.gitignore</p>
+<p>the rules is in the file</p>
+<h3 id="common-cmds-those-we-usually-use"><a href="#common-cmds-those-we-usually-use" class="headerlink" title="common cmds those we usually use"></a>common cmds those we usually use</h3><p>1.查询当前git file tree的文件状态（结构）</p>
+<p>git status</p>
+<p>2.添加当前目录下的所有文件到git file tree</p>
+<p>git add .   (注意这里有个点哦)</p>
+<p>3.提交改动</p>
+<p>git commit -a -m ‘mark the reason why u modify these files’</p>
+<p>4.推送到远程仓库</p>
+<p>git push -u origin master</p>
+<p>enter your remote git account pwd</p>
+<p>5.拉取远程仓库的内容到当前目录</p>
+<p>git pull origin master</p>
+<p>your git pwd as well</p>
+<p>以上未考虑版本分支的情况，也不曾搭建gitlab服务，只做了一点微小的工作，only wish to offer some help to the fellows who fork me</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://img-1256327235.cos.ap-shanghai.myqcloud.com/FullSizeRender%204.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://img-1256327235.cos.ap-shanghai.myqcloud.com/FullSizeRender%203.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/helloBlog.github.io/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/helloBlog.github.io/2018/07/22/Apple路由器-时间胶囊-跨平台使用的一点经验/" class="archive-article-date">
-  	<time datetime="2018-07-22T07:24:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/helloBlog.github.io/2018/07/22/Apple路由器-时间胶囊-跨平台使用的一点经验/">Apple路由器-时间胶囊-跨平台使用的一点经验</a>
-    </h1>
-  
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://climbingdog.github.io/helloBlog.github.io/2019/12/02/git服务搭建和简单的使用/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/helloBlog.github.io/2018/06/15/前后端Token通信的一点思路/" class="archive-article-date">
-  	<time datetime="2018-06-15T09:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/helloBlog.github.io/2019/10/26/工作流实现的一些思路/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java手写工作流的一点实现思路</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/helloBlog.github.io/2018/06/15/前后端Token通信的一点思路/">前后端Token通信的一点思路</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/helloBlog.github.io/2018/05/06/选择排序，插入排序，插入排序(移位)，希尔排序(移位)的C++实现/" class="archive-article-date">
-  	<time datetime="2018-05-06T12:15:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/helloBlog.github.io/2018/05/06/选择排序，插入排序，插入排序(移位)，希尔排序(移位)的C++实现/">选择排序，插入排序，插入排序(移位)，冒泡排序，希尔排序（移位）的C++实现</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/helloBlog.github.io/2018/04/25/与SSO对接，OA系统跨域免登录的一个设计思路与demo/" class="archive-article-date">
-  	<time datetime="2018-04-25T09:53:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/helloBlog.github.io/2018/04/25/与SSO对接，OA系统跨域免登录的一个设计思路与demo/">与SSO对接，OA系统跨域免登录的一个设计思路与demo</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/helloBlog.github.io/2018/04/19/Mybatis注入多数据源并动态切换的一种方法/" class="archive-article-date">
-  	<time datetime="2018-04-19T02:16:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/helloBlog.github.io/2018/04/19/Mybatis注入多数据源并动态切换的一种方法/">Mybatis注入多数据源并动态切换的一种方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/helloBlog.github.io/2018/04/01/传统singleton对象的正确打开方式๑乛◡乛๑/" class="archive-article-date">
-  	<time datetime="2018-04-01T06:42:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/helloBlog.github.io/2018/04/01/传统singleton对象的正确打开方式๑乛◡乛๑/">传统singleton对象的正确打开方式๑乛◡乛๑</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/helloBlog.github.io/2018/03/27/hello-hexo/" class="archive-article-date">
-  	<time datetime="2018-03-27T06:42:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/helloBlog.github.io/2018/03/27/hello-hexo/">hello blog</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -358,8 +389,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
